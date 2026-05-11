@@ -254,30 +254,27 @@ public class pattern {
 
     public static void pattern_19(int n) {
 
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n-i;j++){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i; j++) {
                 System.out.print("*");
 
             }
-            for(int j=0;j<2*i;j++){
+            for (int j = 0; j < 2 * i; j++) {
                 System.out.print(" ");
 
             }
 
-             for(int j=0;j<n-i;j++){
+            for (int j = 0; j < n - i; j++) {
                 System.out.print("*");
 
             }
             System.out.println();
 
-
-
         }
-    
 
-        //reverse
+        // reverse
 
-                 for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             // star
             for (int j = 0; j < i; j++) {
                 System.out.print("*");
@@ -285,7 +282,7 @@ public class pattern {
 
             // space
 
-            for (int j = 0; j < (2*n)-(2*i); j++) {
+            for (int j = 0; j < (2 * n) - (2 * i); j++) {
                 System.out.print(" ");
             }
 
@@ -296,54 +293,73 @@ public class pattern {
             System.out.println();
         }
 
-
     }
 
-    public static void pattern_20(int n){
-        int sp=2*n-2;
+    public static void pattern_20(int n) {
+        int sp = 2 * n - 2;
 
-        for(int i=1;i<=2*n-1;i++){
-        int st=i;
-      
-        if(i>n)st=2*n-i;
+        for (int i = 1; i <= 2 * n - 1; i++) {
+            int st = i;
 
-        for(int j=1;j<=st;j++){
-         System.out.print("*");
+            if (i > n)
+                st = 2 * n - i;
 
-        }
+            for (int j = 1; j <= st; j++) {
+                System.out.print("*");
 
-        for(int j=1;j<=sp;j++){
-         System.out.print(" ");
+            }
 
-        }
+            for (int j = 1; j <= sp; j++) {
+                System.out.print(" ");
 
-        for(int j=1;j<=st;j++){
-         System.out.print("*");
+            }
 
-        }
+            for (int j = 1; j <= st; j++) {
+                System.out.print("*");
 
-        System.out.println();
+            }
 
-               if(i<n)sp-=2;
-               else sp+=2;
-        
+            System.out.println();
+
+            if (i < n)
+                sp -= 2;
+            else
+                sp += 2;
+
         }
     }
 
-    public static void pattern_21(int n){
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                if(i==0||j==0||i==n-1||j==n-1){
-                       System.out.print("*");
+    public static void pattern_21(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || j == 0 || i == n - 1 || j == n - 1) {
+                    System.out.print("*");
 
                 }
 
                 else {
-                      System.out.print(" ");
+                    System.out.print(" ");
 
                 }
             }
-        System.out.println();
+            System.out.println();
+
+        }
+    }
+
+    public static void pattern_22(int n) {
+        for (int i = 0; i < 2 * n - 1; i++) {
+            for (int j = 0; j < 2 * n - 1; j++) {
+                int top = i;
+                int left = j;
+                int bottom = (2 * n - 2) - i;
+                int right = (2 * n - 2) - j;
+
+                int pr = Math.min(Math.min(top, bottom), Math.min(left, right));
+                System.out.print(n - pr);
+
+            }
+            System.out.println();
 
         }
     }
@@ -373,12 +389,12 @@ public class pattern {
         // pattern_18(n);
         // pattern_19(n);
         // pattern_20(n);
-        pattern_21(n);
-
-
+        // pattern_21(n);
+        pattern_22(n);
 
         sc.close();
 
     }
 
 }
+
